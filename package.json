@@ -1,0 +1,45 @@
+{
+  "name": "@agenttoolkit/search",
+  "version": "0.1.0",
+  "description": "Typescript client for Agent Toolkit. https://www.agenttoolkit.ai",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "generate-client": "openapi-ts --input https://api.agenttoolkit.ai/openapi.json --output ./src/client --client @hey-api/client-fetch",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "example": "ts-node examples/quickstart.ts",
+    "test": "ts-node examples/test-local.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isque25/agenttoolkit-search.git"
+  },
+  "keywords": [
+    "api-client",
+    "openapi",
+    "search",
+    "agent",
+    "toolkit",
+    "typescript"
+  ],
+  "author": "Agent Toolkit",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.66.5",
+    "@types/node": "^22.14.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@hey-api/client-fetch": "^0.10.0"
+  }
+}
